@@ -1,4 +1,4 @@
-# Nomad Codeer Vanila JS 5.1 ~5.3 챌린지
+# Nomad Codeer Vanila JS 5.1 ~5.3
 
 ## SetInterval 함수
 
