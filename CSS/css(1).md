@@ -29,9 +29,18 @@
 h1(태그값 or 클래스값 or id값) {
   속성명: 속성값;
 }
-h1 {
+
+태그값 h1 {
   color: red;
   font-size: 50px;
+}
+
+클래스값 .hello {
+  color: blue;
+}
+
+id값 #hi {
+  color: black;
 }
 ```
 
@@ -69,15 +78,17 @@ h1 {
   - 고유속성
   - html 문서내에 유일하게 하나의값 만 가질수 있음
 
-- class 값 (.)
-
-  - html 문서내에서 동일한 class 값을 여러개 가질수 있음
-
   ```html
   <div id="first"></div>
   ```
 
-- class 값
+- class 값 (.)
+  - html 문서내에서 동일한 class 값을 여러개 가질수 있음
+
+```html
+<div class="first"></div>
+<h1 class="first></h1>
+```
 
 # CSS Box 속성
 
