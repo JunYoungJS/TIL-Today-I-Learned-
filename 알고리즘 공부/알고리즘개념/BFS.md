@@ -28,8 +28,8 @@
           int ny = cur.Y + dy[dir]; //  2번
           if(nx < 0 || nx >= n || ny < 0 || ny >= m) continue; // 3. 인접한 좌표가 범위 밖일 경우 넘어감
           if(vis[nx][ny] || board[nx][ny] != 1) continue; // 3. 이미 방문한 칸은 재 방문 x
-          vis[nx][ny] = 1; // (nx, ny)를 방문했다고 명시
-          Q.push({nx,ny});
+          vis[nx][ny] = 1; // 4. 방문을 할수있으면 해당 인접좌표 방문 
+          Q.push({nx,ny}); // 4. 해당 인접좌표의 인접좌표를 나중에 방문하니 큐에 넣음
         }
       }
 
