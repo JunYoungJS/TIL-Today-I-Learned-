@@ -47,3 +47,15 @@
 ```
 
 ## [참조링크](https://developer.mozilla.org/ko/docs/Web/HTML/Element/label)
+
+# form 태그 상세
+
+> name 속성을 input 내에 사용할시 url 형태로 서버에 요청을 할수있음 (서버에 데이터로 요청할수있음 )
+
+```html
+<form action="/hello">
+  <!-- name 속성사용시 submit 을 할때  /hello/username="text내부의값" 형태로 서버에 요청할수있음  -->
+  <input name="username" type="text" />
+  <button>제출</button>
+</form>
+```
