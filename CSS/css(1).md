@@ -90,6 +90,9 @@ id값 #hi {
 <h1 class="first></h1>
 ```
 
+- inherit 속성
+  - 부모에 해당하는 element에게 속성을 상속받는다 .
+
 # CSS Box 속성
 
 - margin
@@ -118,3 +121,42 @@ id값 #hi {
   - 상위박스와 하위박스의 경계가 같으면 margin이 바뀌지않음
   - 하나가 된다
   - 위 아래에서만 발생
+
+# CSS 규격단위
+
+- Relative (상대단위)
+
+  - em
+  - vh
+  - vw
+  - %
+
+- Absoulte (절대단위)
+  - px
+  - pt
+  - cm
+  - in
+  - mm
+
+# CSS 우선순위
+
+- 1.  인라인스타일 , !important (둘다 안쓰는걸 추천 )
+- 2.  id선택자 : 100
+- 3.  class선택자 : 10
+- 4.  요소와 가상요소 선택자 :1
+
+```css
+section p {
+  // 요소 2개  / 0 0 2
+}
+
+#submit {
+  // id 선택자 1개 / 1 0 0
+}
+
+nav a.active {
+  // 클래스 1개  요소 2개  0 1 2
+}
+```
+
+> 숫자가 클수록 우선순위가 높아짐
