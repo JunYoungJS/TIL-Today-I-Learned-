@@ -105,8 +105,7 @@ id값 #hi {
 &nbsp;
 
 - padding
-
-  - box의 경계로부터 안쪽에 있는 공간
+  - box의 border부터 안쪽에 있는 공간
 
 &nbsp;
 
