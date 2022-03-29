@@ -105,7 +105,12 @@ id값 #hi {
 &nbsp;
 
 - padding
-  - box의 border부터 안쪽에 있는 공간
+  <<<<<<< HEAD
+  - # box의 border부터 안쪽에 있는 공간
+  - box의 border로부터 안쪽에 있는 공간
+    <img width="436" alt="스크린샷 2022-03-29 오후 3 44 27" src="https://user-images.githubusercontent.com/100929485/160550109-a9b0eb11-2280-4cda-a5f6-4e54cbd18b1f.png">
+
+> > > > > > > 5ee6f79afce9ee42b2b3c0fd8bd5c0004a831a3d
 
 &nbsp;
 
@@ -126,9 +131,15 @@ id값 #hi {
 - Relative (상대단위)
 
   - em
+    - 1em = 부모 요소와 같은 크기 , 2em = 부모 요소보다 2배 큰 크기
+    - 즉 부모요소에 따라 상대적으로 크기가 변환됨
+    - 부모의요소가 중첩 되어 예상하지 못한 크기가 나올수있음
+  - rem
+    - 글꼴 크기를 부모요소 크기에 바꾸지않고 루트 html요소에 따라 바뀜
   - vh
   - vw
   - %
+    - (너비와 높이는 부모의 요소를 기준으로)
 
 - Absoulte (절대단위)
   - px
