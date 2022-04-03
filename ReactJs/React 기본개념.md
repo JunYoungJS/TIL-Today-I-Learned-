@@ -33,9 +33,9 @@
  > <div> <div></div></div>  이런식으로 작성 o
 ```
 
-## JSX에서 동적 데이터 사용방법
+## JSX에서 동적 데이터(변수) 사용방법
 
-> {변수명} 을 사용 예시
+> {변수명} 으로 정의함
 
 ```jsx
 function ExpenseItem() {
@@ -59,9 +59,10 @@ function ExpenseItem() {
 
 - props 속성을 이용하여 상위 컴포넌트에서 하위컴포넌트로 값을 보낼수있다 .
   - 상위 컴포넌트에서 하위컴포넌트에 속성값을 넣는다
-  - 하위컴포넌트의 매개변수 props에서 상위컴포넌트에서 보낸값을 사용할수있다.
+  - 하위컴포넌트의 매개변수 props에서 상위컴포넌트에서 보낸값을 사용할수있다. (props.xxx)
+  - 하위컴포넌트에서 상위컴포넌트에 정의된 함수도 사용가능하며 하위컴포넌트에서 발생한값을 상위로 보낼수도 있음
 
-> APP 컴포넌트에서 하위 컴포넌트인 ExpenseItem로 보내기 코드 예시
+> 상위 컴포넌트 인 APP 컴포넌트에서 하위 컴포넌트인 ExpenseItem로 보내기 코드 예시
 
 ```jsx
 // 코드 예시
@@ -104,16 +105,6 @@ function App() {
         title={expenses[1].title}
         date={expenses[1].date}
         amount={expenses[1].amount}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[2].title}
-        date={expenses[2].date}
-        amount={expenses[2].amount}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[3].title}
-        date={expenses[3].date}
-        amount={expenses[3].amount}
       ></ExpenseItem>
     </div>
   );
