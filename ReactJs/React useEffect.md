@@ -27,4 +27,4 @@ useEffect(() => {
 }, [color]);
 ```
 
-## use Reducer
+
