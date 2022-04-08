@@ -15,8 +15,8 @@ export default AuthContext;
 
 // 2. AuthContext.Provider로 wrapping 한다 .
 // wrapping된 컴포넌트들은 value값을 하위 컴포넌트에 전달할수있음
-
 <AuthContext.Provider value={isLoggedIn}>
+
 <MainHeader onLogout={logoutHandler} />
       <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
@@ -87,3 +87,7 @@ const Navigation = (props) => {
       }}
 };
 ```
+
+## Context Api의 단점
+
+- Provider 가 제공하는 value prop에 있는 state가 변할떄마다 Provider가 wrapping 하는 모든 컴포넌트들이 리렌더링
