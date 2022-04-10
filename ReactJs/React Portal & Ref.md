@@ -30,6 +30,65 @@ const enteredName = userNameRef.current.value;
 // >>input 태그의 value에 접근가능
 ```
 
+## React forwardRef 란?
+
+- ref props는 html의 노드에 바로 적용이되지만 html 노드가 아닌 원하는 컴포넌트 에서 ref 속성을 사용할때 사용됨
+- 사용예시 (Input 컴포넌트에서 ref속성 사용 하기 )
+
+```jsx
+const MealItemForm = (props) => {
+  const amountInputRef = useRef();
+  return (
+    <form className={classes.form} onSubmit={submitHandler}>
+      <Input
+        // 1. Input 컴포넌트에 ref속성 전달 (use ref사용 )
+        ref={amountInputRef}
+        label="Amount"
+        input={{
+          id: "amount_" + props.id,
+          type: "number",
+          min: "1",
+          max: "5",
+          step: "1",
+          defaultValue: "1",
+        }}
+      />
+    </form>
+  );
+
+  // 2. InPut 컴포넌트에서 forwardRef을 사용하여 ref props전달받고 원하는 태그에 ref속성을 준다.
+  const Input = React.forwardRef((props, ref) => {
+    return (
+      <div className={classes.input}>
+        <label htmlFor={props.input.id}>{props.label}</label>
+        <input ref={ref} {...props.input} />
+      </div>
+    );
+  });
+
+  // 3. amountInputRef.current.value를 통해 컴포넌트에 ref속성을 준곳에 접근가능
+  const MealItemForm = (props) => {
+  const amountInputRef = useRef();
+  return (
+    <form className={classes.form} onSubmit={submitHandler}>
+      <Input
+        // 1. Input 컴포넌트에 ref속성 전달 (use ref사용 )
+        ref={amountInputRef}
+        label="Amount"
+        input={{
+          id: "amount_" + props.id,
+          type: "number",
+          min: "1",
+          max: "5",
+          step: "1",
+          defaultValue: "1",
+        }}
+      />
+    </form>
+  );
+};
+```
+
 # 제어 컴포넌트와 비제어 컴포넌트
 
 ## 제어 컴포넌트
@@ -43,5 +102,3 @@ const enteredName = userNameRef.current.value;
 
 - ref를 통해 form element 를 제어 한다
 - 리렌더링이 발생하지 않고 최종적인값으로 input value에 접근
-
-

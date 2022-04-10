@@ -22,7 +22,7 @@ export default AuthContext;
         {!isLoggedIn && <Login onLogin={loginHandler} />}
         {isLoggedIn && <Home onLogout={logoutHandler} />}
       </main>
-</AuthContext>;
+</AuthContext.Provider>;
 
 
 // 3. 해당 컴포넌트에서 값을 전달받아서 사용하는방법
