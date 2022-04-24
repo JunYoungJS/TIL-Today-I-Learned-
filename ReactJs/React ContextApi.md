@@ -91,3 +91,58 @@ const Navigation = (props) => {
 ## Context Api의 단점
 
 - Provider 가 제공하는 value prop에 있는 state가 변할떄마다 Provider가 wrapping 하는 모든 컴포넌트들이 리렌더링
+
+# Context Api 사용 예시 패턴
+
+- store 폴더생성
+- 컴포넌트에 사용될 값들인 cart-context.js 선언
+
+  ```jsx
+  <!-- cart-context.js -->
+  import React from "react";
+  const CartContext = React.createContext({
+    items: [],
+    totalAmount: 0,
+    addItem: (item) => {},
+    removeItem: (id) => {},
+  });
+  export default CartContext;
+  ```
+
+- 전체 컴포넌트에 제공할 cart-provider.js 선언
+
+```jsx
+import CartContext from "./cart-context";
+// cart-provider.js
+const CartProvider = (props) => {
+  const addItemToCartHandler = (item) => {};
+  const removeItemFromCartHandler = (id) => {};
+
+  const cartContext = {
+    items: [],
+    totalAmount: 0,
+    addItem: addItemToCartHandler,
+    removeItem: removeItemFromCartHandler,
+  };
+
+  return (
+    <CartContext.Provider value={cartContext}>
+      {props.children}
+    </CartContext.Provider>
+  );
+};
+
+export default CartProvider;
+```
+
+- CartProvider의 value를 사용할 컴포넌트에 wrapping 함
+
+```jsx
+<CartProvider>
+  {cartIsShown && <Cart onClose={hideCartHandler} />}
+  <Header onShowCart={showCartHandler} />
+  <main>
+    <Meals />
+  </main>
+</CartProvider>
+```
