@@ -111,7 +111,7 @@ function App() {
 export default App;
 ```
 
-## POST 요청
+## POST 요청 코드
 
 ```jsx
 async function addMovieHandler(movie) {
