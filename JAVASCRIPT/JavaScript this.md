@@ -83,5 +83,3 @@ button.addEventListener("click", () => {
   this.innerHTML = "Clicked button";
 });
 ```
-
-
