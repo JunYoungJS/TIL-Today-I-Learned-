@@ -1,11 +1,38 @@
-# CSS Pseudo Selector
+# CSS 선택자
+
+- id 값 (#)
+
+  - 고유속성
+  - html 문서내에 유일하게 하나의값 만 가질수 있음
+
+  ```html
+  <div id="first"></div>
+  #first{ }
+  ```
+
+- class 값 (.)
+  - html 문서내에서 동일한 class 값을 여러개 가질수 있음
+
+```html
+<div class="first"></div>
+<h1 class="first></h1>
+.first{}
+```
+
+- inherit 속성
+  - 부모에 해당하는 element에게 속성을 상속받는다 .
+
+# Css Pseduo Selector (가상선택자)
 
 - 태그에 id , class 값을 주지 않고 다른방법으로 해당 태그에 접근이 가능하다
 - div:first-child => div태그의 첫번쨰 자식을 선택
 - div:last-child => div 태그의 마지막 자식을 선택
 - div:nth-child(n) => div 태그의 n번쨰 자식을 선택
-- div:nth-child(even)=> div 태그의 짝수번쨰 자식선택
-- div:nth-child(odd)=>div태그의 홀수번쨰 자식선택
+- div:nth-child(even) => div 태그의 짝수번쨰 자식선택
+- div:nth-child(odd) => div태그의 홀수번쨰 자식선택
+- p:nth-of-type(3)=> p태그들중 3번쨰꺼
+
+* nth-of-type => 해당 태그들 중 선택 , nth-child =>해당태그 x 전체 중
 
 # Css Combinator
 
