@@ -31,14 +31,10 @@ for (const i in obj) {
     c: 3,
   };
   for (const a of array) {
+    //value값 출력
     console.log(a); // 1,2,3
   }
+  for (const a of obj) {
+    console.log(a); // not iterable
+  }
   ```
-
-for (const a of obj) {
-console.log(a); // not iterable
-}
-
-```
-
-```

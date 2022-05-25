@@ -15,8 +15,8 @@
 - Mutable 예시
 
 ```javascript
-let x = ["foo"];
-let y = x; // x의 메모리주소를 가지고있음
+let x = ["foo"]; // 주소 :10
+let y = x; // y= 주소 10 (x의 메모리주소를 가지고있음)
 
 x.push("bar");
 
@@ -36,4 +36,17 @@ var a = {
   a: 1,
   b: [1, 2, 3], // => freeze로 얼려야됨
 };
+```
+
+# Object 저장 방식 (mutable)
+
+```js
+const obj = {
+  a: 1,
+  b: 2,
+};
+// obj.a=3 // const 여도 변경가능 , 왜 ? 주소 10번쨰의값을 변경시키는것이 아님
+
+// 10 : obj -> 20
+// 20 : {a,b}
 ```
