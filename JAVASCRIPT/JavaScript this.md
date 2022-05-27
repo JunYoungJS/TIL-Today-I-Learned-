@@ -9,7 +9,7 @@ var value = 0;
 var obj = {
   value: 1,
   setvalue: function () {
-    this.value = 2(
+    this.value = 2,
       //obj.value
       function () {
         this.value = 3;
